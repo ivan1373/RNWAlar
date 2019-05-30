@@ -11,6 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+
+Route::get('/', 'ActorController@index');
+Route::get('{actor}','ActorController@show');
+Route::get('create', 'ActorController@create');
+Route::post('create', 'ActorController@store');
+Route::get('{actor}/edit', 'ActorController@edit');
+Route::put('{actor}/edit', 'ActorController@update');
+Route::delete('{actor}', 'ActorController@destroy');
+
+
